@@ -1,0 +1,190 @@
+<table class="table configurationtable">
+    <tr>
+        <td><h3>Details for Configuration {{configuration.name}} Project {{configuration.project}}</h3></td>
+        <td></td>
+    </tr>
+<!--      <tr> -->
+<!--         <td>ID</td> -->
+<!--         <td>{{configuration._id.$oid}}</td> -->
+<!--     </tr> -->
+
+     <tr>
+        <td>Configuration Name</td>
+        <td>{{configuration.name}}</td>
+    </tr>
+    <tr>
+        <td>Project Name</td>
+        <td>{{configuration.project}}</td>
+    </tr>
+    <tr>
+        <td>Customer</td>
+        <td>{{configuration.tenant}}</td>
+    </tr>
+<!--     <tr> -->
+<!--         <td>Version</td> -->
+<!--         <td>{{configuration.version}}</td> -->	
+<!--     </tr> -->
+<!--     <tr> -->
+<!--         <td>Version Start Date</td> -->
+<!--         <td>{{configuration.startDate}}</td> -->
+<!--     </tr> -->
+<!--     <tr> -->
+<!--         <td>Version End Date</td> -->
+<!--         <td>{{configuration.endDate}}</td> -->
+<!--     </tr> -->
+<!--     <tr> -->
+<!--         <td>Sprint Name</td> -->
+<!--         <td>{{configuration.sprintName}}</td> -->
+<!--     </tr> -->
+<!--     <tr> -->
+<!--         <td>Sprint Start Date</td> -->
+<!--         <td>{{configuration.sprintStartDate}}</td> -->
+<!--     </tr> -->
+<!--     <tr> -->
+<!--         <td>Sprint End Date</td> -->
+<!--         <td>{{configuration.sprintEndDate}}</td> -->
+<!--     </tr> -->
+   
+  
+</table>
+<!-- <h2>Tools</h2> -->
+<div class="form-group">
+ <h3>Tools</h3>
+   <label for="plot" class="col-sm-2 control-label">Select Tool</label>
+    <div class="col-sm-10">
+    <select ng-model="tools">
+      <option  value="Select">Select Tool</option>
+      <option  value="Jenkins">Jenkins</option>
+      <option  value="Bamboo">Bamboo</option>
+      <option  value="Jira">Jira</option>
+      <option  value="GITLAB">GITLAB</option>
+      <option  value="GITHUB">GITHUB</option>      
+    </select>
+  
+    </div>
+ </div>
+ <div class="Jenkins" class="form-group" ng-show="tools=='Jenkins'">
+     <table class="table configurationtable">
+    <tr>
+        <td>Jenkins Host Name</td>
+        <td>{{configuration.tools.jenkins.hostName}}</td>
+    </tr>
+    <tr>
+        <td>Jenkins Port</td>
+        <td>{{configuration.tools.jenkins.port}}</td>
+    </tr>
+    <tr>
+        <td>Jenkins Job Name</td>
+        <td>{{configuration.tools.jenkins.projectName}}</td>
+    </tr>
+     <tr>
+        <td>Jenkins User</td>
+        <td>{{configuration.tools.jenkins.user}}</td>
+    </tr>
+    <tr>
+        <td>Jenkins Password</td>
+        <td>{{configuration.tools.jenkins.password}}</td>
+    </tr>
+     </table>
+ </div>
+ <div class="Bamboo" class="form-group" ng-show="tools=='Bamboo'">
+     <table class="table configurationtable">
+    <tr>
+        <td>Bamboo Host Name</td>
+        <td>{{configuration.tools.bamboo.hostname}}</td>
+    </tr>
+    <tr>
+        <td>Bamboo Port</td>
+        <td>{{configuration.tools.bamboo.port}}</td>
+    </tr>
+    <tr>
+        <td>Bamboo User Name</td>
+        <td>{{configuration.tools.bamboo.userName}}</td>
+    </tr>
+      <tr>
+        <td>Bamboo Password</td>
+        <td>{{configuration.tools.bamboo.password}}</td>
+    </tr>
+     <tr>
+        <td>Bamboo ProjectKey</td>
+        <td>{{configuration.tools.bamboo.projectKey}}</td>
+    </tr>
+     <tr>
+        <td>Bamboo PlanKey</td>
+        <td>{{configuration.tools.bamboo.planKey}}</td>
+    </tr>
+    
+     </table>
+ </div>
+ <div class="Jira" class="form-group" ng-show="tools=='Jira'">
+     <table class="table configurationtable">
+    <tr>
+        <td>Jira Server Url</td>
+        <td>{{configuration.tools.jira.jiraServerUri}}</td>
+    </tr>
+    <tr>
+        <td>Jira User Name</td>
+        <td>{{configuration.tools.jira.userName}}</td>
+    </tr>
+    <tr>
+        <td>Jira Password</td>
+        <td>{{configuration.tools.jira.password}}</td>
+    </tr>
+     <tr>
+        <td>Jira Project Name</td>
+        <td>{{configuration.tools.jira.projectName}}</td>
+    </tr>
+    <tr>
+        <td>Jira Version Number</td>
+        <td>{{configuration.tools.jira.versionNumber}}</td>
+    </tr>
+     </table>
+ </div>
+ <div class="GITHUB" class="form-group" ng-show="tools=='GITHUB'">
+     <table class="table configurationtable">
+         <tr>
+             <td>GitHUB Token</td>
+             <td>{{configuration.tools.github.access_token}}</td>
+         </tr>
+    <tr>
+        <td>GITHUB Repository Name</td>
+        <td>{{configuration.tools.github.repo}}</td>
+    </tr>
+     <tr>
+        <td>GITHUB  Repository Owner</td>
+        <td>{{configuration.tools.github.repositoryOwner}}</td>
+    </tr>
+    <tr>
+        <td>GITHUB Branch Name</td>
+        <td>{{configuration.tools.github.branch}}</td>
+    </tr>
+     </table>
+ </div>
+ <div class="GITLAB" class="form-group" ng-show="tools=='GITLAB'">
+     <table class="table configurationtable">
+    <tr>
+        <td>Gitlab Server Url</td>
+        <td>{{configuration.tools.gitlab.serverUrl}}</td>
+    </tr>
+    <tr>
+        <td>Gitlab Token</td>
+        <td>{{configuration.tools.gitlab.token}}</td>
+    </tr>
+    <tr>
+        <td>Gitlab Project Name</td>
+        <td>{{configuration.tools.gitlab.projectName}}</td>
+    </tr>
+     <tr>
+        <td>Gitlab  Auth Str</td>
+        <td>{{configuration.tools.gitlab.useOAuth2Str}}</td>
+    </tr>
+    <tr>
+        <td>Gitlab Branch Name</td>
+        <td>{{configuration.tools.gitlab.branchName}}</td>
+    </tr>
+     </table>
+ </div>
+ <br>
+<div class="form-group">
+    <a class="btn btn-primary" ui-sref="editConfiguration({id:configuration._id.$oid})">Edit</a>
+</div>

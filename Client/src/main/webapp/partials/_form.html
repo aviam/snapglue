@@ -1,0 +1,262 @@
+<!-- <div class="form-group"> -->
+<!--     <label for="title" class="col-sm-2 control-label">Configuration ID</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input type="text" ng-model="configuration._id.$oid" class="form-control" id=configurationID readonly/> -->
+<!--     </div> -->
+<!-- </div> -->
+<div class="form-group">
+    <label for="title" class="col-sm-2 control-label">Configuration Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.name" class="form-control" id="name" placeholder="Configuration Name Here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="title" class="col-sm-2 control-label">Project Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.project" class="form-control" id="project" placeholder="Project Name Here"/>
+    </div>
+</div>
+
+<div class="form-group" ng-controller="FieldController">
+    <label for="title" class="col-sm-2 control-label">Customer</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tenant" class="form-control" id="tenant" placeholder="{{tenant}}"/>
+    </div>
+</div>
+<!-- <div class="form-group"> -->
+<!--     <label for="year" class="col-sm-2 control-label">Version</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input type="text" ng-model="configuration.version" class="form-control" id="version" placeholder="The Version"/> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="form-group"> -->
+<!--     <label for="director" class="col-sm-2 control-label">Version Start Date</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input  type="text" ng-model="configuration.startDate" pick-a-date="date" pick-a-date-options="{ format: 'dd/mm/yyyy' }" placeholder="Click To Choose Start Date Verion" class="form-control" id="startDate"> -->
+       
+<!--         <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?"/> --> 
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="form-group"> -->
+<!--     <label for="director" class="col-sm-2 control-label">Version End Date</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input  type="text" ng-model="configuration.endDate" pick-a-date="date" pick-a-date-options="{ format: 'dd/mm/yyyy' }" placeholder="Click To Choose End Date Verion" class="form-control" id="endDate"> -->
+       
+<!--        <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?"/> --> 
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="form-group"> -->
+<!--     <label for="plot" class="col-sm-2 control-label">Sprint Name</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input type="text" ng-model="configuration.sprintName" class="form-control" id="sprintName" placeholder="Sprint Name here"/> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="form-group"> -->
+<!--     <label for="director" class="col-sm-2 control-label">Sprint Start Date</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input  type="text" ng-model="configuration.sprintStartDate" pick-a-date="date" pick-a-date-options="{ format: 'dd/mm/yyyy' }" placeholder="Click To Choose Sprint Start  Date" class="form-control" id="sprintStartDate"> -->
+       
+<!--         <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?"/> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div class="form-group"> -->
+<!--     <label for="director" class="col-sm-2 control-label">Sprint End Date</label> -->
+<!--     <div class="col-sm-10"> -->
+<!--         <input  type="text" ng-model="configuration.sprintEndDate" pick-a-date="date" pick-a-date-options="{ format: 'dd/mm/yyyy' }" placeholder="Click To Choose Sprint End Date" class="form-control" id="sprintEndDate"> -->
+       
+<!--       <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?"/> --> 
+<!--     </div> -->
+<!-- </div> -->
+
+<H2>Tools</H2>
+<div class="form-group">
+   <label for="plot" class="col-sm-2 control-label">Select Tool</label>
+    <div class="col-sm-10">
+    <select ng-model="tools">
+      <option  value="Select">Select Tool</option>
+      <option  value="Jenkins">Jenkins</option>
+      <option  value="Bamboo">Bamboo</option>
+      <option  value="Jira">Jira</option>
+      <option  value="GITLAB">GITLAB</option>
+      <option  value="GITHUB">GITHUB</option>
+    </select>
+    </div>
+  </div>
+ <div class="Jenkins" ng-show="tools=='Jenkins'">
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jenkins Host</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jenkins.hostName" class="form-control" id="jenkinsHostName"
+               placeholder="Jenkins hostName here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jenkins Port</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jenkins.port" class="form-control" id="jenkinsPort" placeholder="Jenkins port here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jenkins Project Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jenkins.projectName" class="form-control"
+               id="jenkinsProjectName"
+               placeholder="Jenkins Project Name here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jenkins User</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jenkins.user" class="form-control" id="jenkinsUserName" placeholder="Jenkins User here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jenkins Password</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jenkins.password" class="form-control" id="jenkinsPassword" placeholder="Jenkins Password here"/>
+    </div>
+</div>
+</div>
+<div class="Bamboo" ng-show="tools=='Bamboo'">
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Bamboo Host</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.bamboo.hostname" class="form-control" id="bambooHostName" placeholder="Bamboo Hostname here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Bamboo Port</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.bamboo.port" class="form-control" id="bambooPort" placeholder="Bamboo Port here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Bamboo UserName</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.bamboo.userName" class="form-control" id="bambooUserName" placeholder="Bamboo User Name Here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Bamboo Password</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.bamboo.password" class="form-control" id="bambooPassword" placeholder="Bamboo Password here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Bamboo ProjectKey</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.bamboo.projectKey" class="form-control" id="bambooProjectKey" placeholder="Bamboo ProjectKey here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Bamboo PlanKey</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.bamboo.planKey" class="form-control" id="bambooPlanKey" placeholder="Bamboo PlanKey here"/>
+    </div>
+</div>
+
+</div>
+<div class="Jira" ng-show="tools=='Jira'">
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jira  Server Url</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jira.jiraServerUri" class="form-control" id="jiraServerUri" placeholder="Jira Server Url here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jira User Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jira.userName" class="form-control" id="jiraUserName" placeholder="Jira User Name here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jira Password</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jira.password" class="form-control" id="jiraPassword" placeholder="Jira Password here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jira Project Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jira.projectName" class="form-control" id="jiraProjectkey" placeholder="Jira Project Name here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">Jira Version Number</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.jira.versionNumber" class="form-control" id="jiraVersionNumber" placeholder="Jira Version Number here"/>
+    </div>
+</div>
+</div>
+<div class="GITHUB" ng-show="tools=='GITHUB'">
+    <div class="form-group">
+        <label for="plot" class="col-sm-2 control-label">GITHUB Token</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="configuration.tools.github.access_token" class="form-control" id="githubToken"
+                   placeholder="GITHUB Token here"/>
+        </div>
+    </div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITHUB Repository Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.github.repo" class="form-control" id="githubRepositoryName" placeholder="GITHUB Repository Name here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITHUB Repository Owner</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.github.repositoryOwner" class="form-control" id="repositoryOwner" placeholder="GITHUB Repository Owner here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITHUB Branch Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.github.branch" class="form-control" id="githubBranch" placeholder="GITHUB Branch Name here"/>
+    </div>
+</div>
+</div>
+<div class="GITLAB" ng-show="tools=='GITLAB'">
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITLAB  Server Url</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.gitlab.serverUrl" class="form-control" id="gitlabServerUrl" placeholder="GITLAB Server Url here"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITLAB Token</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.gitlab.token" class="form-control" id="gitlabToken" placeholder="GITLAB Token here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITLAB Project Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.gitlab.projectName" class="form-control" id="gutlabProjectName" placeholder="GITLAB Project Name here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITLAB Auth String</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.gitlab.useOAuth2Str" class="form-control" id="gitlabUseOAuth2Str" placeholder="GITLAB useOAuth2Str here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="plot" class="col-sm-2 control-label">GITLAB Branch Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="configuration.tools.gitlab.branch" class="form-control" id="gitlabBranch" placeholder="GITLAB Branch Name here"/>
+    </div>
+</div>
+</div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+</div>
+ 

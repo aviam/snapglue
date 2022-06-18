@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadgets>
+	<gadget name="Daily Report" group="Activities">
+		<kpis>
+			<kpi>itemsLimitNumber=40</kpi>
+		</kpis>
+	</gadget>
+
+	<gadget name="Alerts" group="Rules and Alerts">
+		<kpis>
+			<kpi>itemsLimitNumber=30</kpi>
+			<kpi>days=7</kpi>
+		</kpis>
+	</gadget>
+</gadgets>

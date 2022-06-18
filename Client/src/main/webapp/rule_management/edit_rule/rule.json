@@ -1,0 +1,8 @@
+{
+		"projectId":"SNAPGLUE",
+		"type":"Issue Status",
+		"enabled":true,
+		"kpis":{
+		"days":"3"
+		}
+}

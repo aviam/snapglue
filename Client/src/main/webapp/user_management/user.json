@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "username": "email@example.com",
+    "role": "ROLE_ADMIN",
+    "email": "email@example.com",
+    "password": "---",
+    "enabled": true,
+    "accountNonExpired": true,
+    "credentialsNonExpired": true,
+    "accountNonLocked": true,
+    "tenant": "none"
+}

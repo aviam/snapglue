@@ -1,0 +1,36 @@
+[
+	{
+		"projectId":"SNAPGLUE",
+		"type":"Issue Status",
+		"enabled":true,
+		"kpis":{
+		"days":"3"}
+	},
+	{
+		"projectId":"SNAPGLUE",
+		"type":"Version Status",
+		"enabled":true,
+		 "kpis":{
+		"remainingDays":"3",
+		"numberOfOpenIssues":"10"}
+	},
+	{
+		"projectId":"SNAPGLUE",
+		"type":"Version Progress Trend",
+		"enabled":true,
+		"kpis":{}
+	},
+	{
+		"projectId":"SNAPGLUE",
+		"type":"Build Failure Occurrence",
+		"enabled":true,
+		"kpis":{}
+	},
+	{
+		"projectId":"SNAPGLUE",
+		"type":"Build Failure Was Not Fixed",
+		"enabled":true,
+		 "kpis":{
+		"hours":"3"}
+	}
+]

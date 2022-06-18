@@ -1,0 +1,85 @@
+<style>
+    .navbar {
+        background: #3c8dbc;
+    }
+
+    .navbar .navbar-nav > li > a {
+        color: #f6fafc;
+    }
+
+    .navbar .navbar-nav > li > a:hover {
+        color: #3c8dbc;
+    }
+</style>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/dashboard" class="navbar-brand" rel="home" title="SnapGlue">
+                <img style="max-width:100px; margin-top: 3px;"
+                     src="brand-dark.png">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse pull-left" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/dashboard">Home</a>
+                    </li>
+                    <li ng-class="{ active: isActive('/quickstart')}">
+                     	   <a href="#/quickstart">Quick Start</a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#/rule-management/create"><i class="fa fa-plus"></i> Add Rule <span
+                        class="sr-only">(current)</span></a></li>
+          
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Rule Management</h1>
+
+            <div class="table-responsive table-striped">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Enabled</th>	
+<!--                         <th>Project</th> -->
+                        <th>Type</th>
+                        
+                        <th>KPIS</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="rule in rules">
+                        <td class="text-center"><i ng-class="{ 'fa-check-square-o': rule.enabled, 'fa-square-o': !rule.enabled }" class="fa" ng-click="toggleEnable(rule)"></i></td>
+<!--                         <td>{{ rule.projectId }}</td> -->
+                        <td>{{ rule.type }}</td>
+                        <td><table><tr ng-repeat="(key, value) in rule.kpis">
+                                 <td>{{key}}=</td><td>{{value}}</td>
+                        </tr></table></td>
+                        
+                        <td nowrap><a href="#/rule-management/rule/{{ rule._id.$oid }}/edit" class="btn btn-warning btn-xs">Edit</a>
+<!--                         <button ng-click="deleteRule(rule)" class="btn btn-danger btn-xs">Delete</button></td> -->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<a ui-sref="newConfiguration" class="btn-primary btn-lg nodecoration">Add New Configuration</a>
+<a ui-sref="stopAgentJob" class="btn-primary btn-lg nodecoration">Stop Agent Job</a>
+<a ui-sref="startAgentJob" class="btn-primary btn-lg nodecoration">Start Agent Job</a>
+
+<table class="table configurationtable">
+    <tr>
+        <td><h3>All Configurations</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="configuration in configurations">
+    <!--tr ng-repeat="configuration in configurations | filter: { tenant:myTanent }"-- >
+<!--         <td>{{configuration.project}} Version {{configuration.version}} Sprint {{configuration.sprintName}} ID {{configuration._id.$oid}} </td> -->
+           <td>Configuration {{configuration.name}} for Project {{configuration.project}}</td>
+           <td> <a class="btn btn-primary" ui-sref="viewConfiguration({id:configuration._id.$oid})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteConfiguration(configuration)">Delete</a>
+        </td>
+    </tr>
+</table>

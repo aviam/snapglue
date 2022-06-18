@@ -1,0 +1,11 @@
+{
+"labelsUserActivities":["avia", "lior", "gili","galit","ido","eran"],
+"seriesUserActivities":["NumberOfClosedIssues","NumberOfCommits","NumberOfFailedBuilds","NumberOfOpenIssues","NumberOfSuccessfulBuilds"],
+"dataUserActivities":[
+	[3, 3, 3,5,6,7],
+	[4, 5, 6,6,8,4],
+	[7, 2, 7,4,7,3],
+	[12, 6, 4,5,4,3],
+	[5, 10, 2,4,7,8]
+	]
+}

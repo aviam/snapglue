@@ -1,0 +1,141 @@
+<style>
+    .navbar {
+        background: #3c8dbc;
+    }
+
+    .navbar .navbar-nav > li > a {
+        color: #f6fafc;
+    }
+
+    .navbar .navbar-nav > li > a:hover {
+        color: #3c8dbc;
+    }
+</style>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/dashboard" class="navbar-brand" rel="home" title="SnapGlue">
+                <img style="max-width:100px; margin-top: 3px;"
+                     src="brand-dark.png">
+            </a>
+        </div>
+         <div class="navbar-collapse collapse pull-left" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/dashboard">Home</a>
+                    </li>
+                    <li ng-class="{ active: isActive('/quickstart')}">
+                     	   <a href="#/quickstart">Quick Start</a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#/rule-management/create"><i class="fa fa-plus"></i> Add Rule <span
+                        class="sr-only">(current)</span></a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Add Rule</h1>
+<!--             <form class="form-horizontal"> -->
+<!--                 <fieldset> -->
+
+                   
+<!--                     <div class="form-group"> -->
+<!--                         <label class="col-md-4 control-label" for="username">Project</label> -->
+<!--                         <div class="col-md-4"> -->
+<!--                             <input id="project" ng-model="projectId" name="projectid" type="text" placeholder="" class="form-control input-md" autofocus> -->
+<!--                             <span class="help-block"></span> -->
+<!--                         </div> -->
+<!--                     </div> -->
+
+                   
+<!--                     <div class="form-group"> -->
+<!--                         <label class="col-md-4 control-label" for="email">Type</label> -->
+<!--                         <div class="col-md-4"> -->
+<!--                             <input id="type" ng-model="type" name="type" type="text" placeholder="" class="form-control input-md"> -->
+<!--                             <span class="help-block"></span> -->
+<!--                         </div> -->
+<!--                     </div> -->
+
+<!--                    <div class="form-group"> -->
+<!--                         <label class="col-md-4 control-label" for="type">Enabled</label> -->
+<!--                         <div class="col-md-4">    -->
+<!--                             <input id="type" ng-model="enabled" name="type" type="checkbox" class="form-control input-md" autofocus> -->
+<!--                             <span class="help-block"></span> -->
+<!--                         </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                         <label class="col-md-4 control-label">Kpis:</label> -->
+                     
+<!--                     </div> -->
+<!--                      <div class="form-group"> -->
+<!--                        <div class="col-md-4"> -->
+<!--                      <fieldset  data-ng-repeat="choice in choices"> -->
+<!--                         <select> -->
+<!--                        <option>kpi1</option> -->
+<!--                         <option>kpi2</option> -->
+<!--                        <option>kpi3</option> -->
+<!--                       </select> -->
+<!--                      <input type="text" ng-model="choice.name" name="" placeholder="Enter mobile number"> -->
+<!--                     <button class="remove" ng-show="$last" ng-click="removeChoice()">-</button> -->
+<!--                    </fieldset> -->
+<!--                      </div> -->
+                        
+<!--                    </div> -->
+<!--                     <div class="form-group"> -->
+<!--                        <div class="col-md-4"> -->
+<!--                     <button class="addfields" ng-click="addNewChoice()">Add fields</button> -->
+<!--                     </div> -->
+<!--                     </div> -->
+<!--                <div id="choicesDisplay"> -->
+<!--                 {{ choices }} -->
+<!--                         </div> -->
+<!--                   <div class="form-group"> -->
+<!--                     <fieldset  ng-repeat="(key, value) in kpis"> --> 
+<!--                        <div class="col-md-4">    --> 
+<!--                        <input type="text" ng-model="key" name="key" placeholder="Enter Kpi Name" class="form-control input-md" autofocus> --> 
+<!--                  <input type="text" ng-model="value" name="value" placeholder="Enter kpi Value" class="form-control input-md" autofocus>        --> 
+<!--                        <button class="remove" ng-show="$last" ng-click="removeKpi()">-</button> --> 
+<!--                   </div> --> 
+<!-- <!--                     </fieldset> -->
+<!-- <!--                    <button class="addfields" ng-click="addNewKpi()">Add kpis</button> --> 
+<!-- <!--                   </div> --> 
+<!--                     Error -->
+<!--                     <div class="form-group"> -->
+<!--                         <label class="col-md-4 control-label"></label> -->
+<!--                         <div class="col-md-4"> -->
+<!--                             <label class="text-danger">{{ errorMessage }}</label> -->
+<!--                         </div> -->
+<!--                     </div> -->
+
+<!--                     Button -->
+<!--                     <div class="form-group"> -->
+<!--                         <label class="col-md-4 control-label" for="add">Add</label> -->
+<!--                         <div class="col-md-4"> -->
+<!--                             <button ng-click="add()" id="add" name="add" class="btn btn-primary">Add</button> -->
+<!--                         </div> -->
+<!--                     </div> -->
+
+<!--                 </fieldset> -->
+<!--             </form> -->
+        <H3>Not Implemented Yet</H3>
+        </div>
+    </div>
+</div>

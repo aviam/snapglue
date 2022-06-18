@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <!-- To allow public access by default and to set authentication mode to basic login/password -->
+    <security:http pattern="/bower_components/**" security="none"/>
+    <security:http pattern="/login/**" security="none"/>
+    <security:http pattern="/components/**" security="none"/>
+    <security:http pattern="/dashboard/**" security="none"/>
+    <security:http pattern="/user_management/**" security="none"/>
+    <security:http pattern="/rule_management/**" security="none"/>
+    <security:http pattern="/#/agent/**" security="none"/>
+
+    <!--protect the rest of the application -->
+    <security:http use-expressions="true" auto-config="true">
+        <security:session-management session-fixation-protection="migrateSession">
+            <security:concurrency-control max-sessions="1000" expired-url="/#/login" session-registry-alias="sessionRegistry"/>
+        </security:session-management>
+        <security:intercept-url pattern="/#/login" access="permitAll()"/>
+        <security:intercept-url pattern="/#/usermanagement/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/#/agent/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/#/rulemanagement/**" access="hasRole('ROLE_USER,ROLE_ADMIN')"/>
+        <security:intercept-url method="POST" pattern="/#/pluginsService" access="hasAnyRole('ROLE_USER,ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/#/**" access="hasAnyRole('ROLE_USER,ROLE_ADMIN')"/>
+        <security:form-login login-page="/#/login" username-parameter="j_username" password-parameter="j_password" login-processing-url="/j_spring_security_check" authentication-success-handler-ref="myAuthenticationSuccessHandler" authentication-failure-handler-ref="myAuthenticationFailureHandler"/>
+    </security:http>
+    <bean id="authenticationEntryPoint" class="com.nigealm.auth.SnapGlueAuthenticationEntryPoint"> </bean>
+
+    <!-- To create user/password with roles -->
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user authorities="ROLE_ADMIN,ROLE_USER" name="nigeuser" password="zvikaavi~12"/>
+                <!-- 				<security:user authorities="ROLE_ADMIN,ROLE_USER" -->
+                <!--  					name="avia@gmail.com" password="avshi12" />  -->
+                <security:user authorities="ROLE_ADMIN,ROLE_USER" name="liory" password="ggmimi99"/>
+            </security:user-service>
+        </security:authentication-provider>
+        <security:authentication-provider ref="daoAuthenticationProvider"/>
+    </security:authentication-manager>
+
+    <bean id="myAuthenticationSuccessHandler" class="com.nigealm.auth.AjaxAuthenticationSuccessHandler"/>
+
+    <bean id="myAuthenticationFailureHandler" class="com.nigealm.auth.AjaxAuthenticationFailureHandler"/>
+
+    <bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <property name="userDetailsService" ref="userDetailsService"/>
+        <property name="saltSource" ref="saltSource"/>
+        <property name="passwordEncoder" ref="passwordEncoder"/>
+    </bean>
+
+    <bean id="userDetailsService" class="com.nigealm.usermanagement.UserDetailsServiceImpl"/>
+
+    <bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+        <property name="userPropertyToUse" value="username"/>
+    </bean>
+
+    <bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
+        <constructor-arg value="512"/>
+        <property name="iterations" value="1024"/>
+    </bean>
+</beans>

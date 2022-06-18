@@ -1,0 +1,114 @@
+<style>
+    .navbar {
+        background: #3c8dbc;
+    }
+    .navbar .navbar-nav>li>a {
+        color: #f6fafc;
+
+    }
+    .navbar .navbar-nav>li>a:hover {
+        color: #3c8dbc;
+    }
+</style>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/dashboard" class="navbar-brand" rel="home" title="SnapGlue">
+                <img style="max-width:100px; margin-top: 3px;"
+                     src="brand-dark.png">
+            </a>
+        </div>
+    
+        <div class="navbar-collapse collapse pull-left" id="navbar-main">
+                <ul class="nav navbar-nav">
+                 
+                      <li>
+                        <a href="#/dashboard">Home</a>
+                      </li>
+                      <li ng-class="{ active: isActive('/quickstart')}">
+                     	   <a href="#/quickstart">Quick Start</a>
+                      </li>
+              </ul>
+            </div>   
+            
+                    <!-- Notifications: style can be found in dropdown.less -->
+              <ul class="nav navbar-nav pull-right">
+             
+              
+                <li class="dropdown notifications-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   <i class="fa fa-bell-o fa-caret-down"></i>
+                    <i class="fa fa-caret-down"></i>
+                    <span class="label label-warning">{{ notification }}</span>
+                  </a>
+                 <ul class="dropdown-menu">
+                    <li ng-if="isRoleAdmin"><a href="#/rule-management" class="btn pull-left">Rules Management</a></li>
+                  
+                  <li><a href="#" ng-click="addAlerts($event)" class="pull-left btn">View All Alerts</a></li>
+                </ul>
+              </li>
+              
+                <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="dashboard/Avi_Amslem.jpg" class="user-image">
+                  <span class="hidden-xs">Avi Amsalem</span>
+                  <i class="fa fa-caret-down"></i>
+                </a>
+                 <ul class="dropdown-menu">
+                  <li><a class="pull-left btn" href="#" ng-click="logout($event); ">Log Out</a></li>
+                  <li><a href="#/user-management/user/{{ userID }}/edit" class="btn pull-left">Edit Profile</a></li>
+                 
+                </ul>      
+              </li>
+           </ul>
+            </div>
+     
+<!--     </div>ng-click="logout(); $event.stopPropagation(); -->
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li ng-if="isRoleAdmin"><a href="#/user-management"><i class="fa fa-users"></i> Manage Users</a></li>
+                <li ng-if="isRoleAdmin"><a href="#/agent"><i class="fa fa-cogs"></i>Configure Agent</a></li>
+               
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <a class="pull-right btn btn-primary" ng-click="addGadget()"><i class="glyphicon glyphicon-plus"></i> Add Gadget</a>
+                <a class="pull-right btn btn-warning" ng-click="clear()"><i class="glyphicon glyphicon-trash"></i> Clear Gadgets</a>
+        
+            <h1 class="page-header">Dashboard <small class="text-muted">Your Gadgets</small></h1>
+
+<!--                <div mc-messages></div> -->
+            <div gridster="gridsterOptions">
+	           <ul>
+		         <li gridster-item="widget" ng-repeat="widget in dashboard.widgets">
+
+			         <widget-body></widget-body>
+		       </li>
+	        </ul>
+          </div>
+          
+                <footer>
+                        <div>Copyright (c) 2015 SnapGlue. All rights reserved. v<span app-version></span></div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+<!--
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+-->

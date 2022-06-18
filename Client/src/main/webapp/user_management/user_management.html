@@ -1,0 +1,93 @@
+<style>
+    .navbar {
+        background: #3c8dbc;
+    }
+
+    .navbar .navbar-nav > li > a {
+        color: #f6fafc;
+    }
+
+    .navbar .navbar-nav > li > a:hover {
+        color: #3c8dbc;
+    }
+</style>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/agent" class="navbar-brand" rel="home" title="SnapGlue">
+                <img style="max-width:100px; margin-top: 3px;"
+                     src="brand-dark.png">
+            </a>
+        </div>
+        <!--<div class="navbar-collapse collapse pull-left" id="navbar-main">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li>-->
+                        <!--<a href="#/dashboard">Home</a>-->
+                    <!--</li>-->
+                    <!--<li ng-class="{ active: isActive('/quickstart')}">-->
+                     	   <!--<a href="#/quickstart">Quick Start</a>-->
+                    <!--</li>-->
+                    <!-- -->
+                    <!-- -->
+                <!--</ul>-->
+            <!--</div>-->
+            <!-- -->
+            
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#/user-management/create"><i class="fa fa-user-plus"></i> Add User <span
+                        class="sr-only">(current)</span></a></li>
+          
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">User Management</h1>
+
+            <div class="table-responsive table-striped">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Enabled</th>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Picture</th>
+                        <th>Tenant</th>
+                        <th>Credentials Non Expired</th>
+                        <th>Account Non Expired</th>
+                        <th>Account Non Locked</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in users">
+                        <td class="text-center"><i ng-class="{ 'fa-check-square-o': user.enabled, 'fa-square-o': !user.enabled }" class="fa" ng-click="toggleEnable(user)"></i></td>
+                        <td>{{ user._id.$oid }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td class="text-center">--</td>
+                        <td>{{ user.tenant }}</td>
+                        <td class="text-center"><i ng-class="{ 'fa-check-square-o': user.credentialsNonExpired, 'fa-square-o': !user.credentialsNonExpired }" class="fa" ng-click="toggleCredentialsNonExpired(user)"></i></td>
+                        <td class="text-center"><i ng-class="{ 'fa-check-square-o': user.accountNonExpired, 'fa-square-o': !user.accountNonExpired }" class="fa" ng-click="toggleAccountNonExpired(user)"></i></td>
+                        <td class="text-center"><i ng-class="{ 'fa-check-square-o': user.accountNonLocked, 'fa-square-o': !user.accountNonLocked }" class="fa" ng-click="toggleAccountNonLocked(user)"></i></td>
+                        <td nowrap><a href="#/user-management/user/{{ user._id.$oid }}/edit" class="btn btn-warning btn-xs">Edit</a>
+                        <button ng-click="deleteUser(user)" class="btn btn-danger btn-xs">Delete</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

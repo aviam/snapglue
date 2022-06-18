@@ -1,0 +1,58 @@
+[
+  {
+    "accountNonExpired": true,
+    "accountNonLocked": true,
+    "authorities": null,
+    "credentialsNonExpired": true,
+    "data": "",
+    "email": "liory.snapglue@gmail.com",
+    "enabled": true,
+    "id": 1,
+    "password": "a117bdfa73d241aa1a180c2b3929be82a272c94c282ccaaf7772c3959bebe1293607bbbf6a1114fe3b72fbc1e4e520ee51499b78bf8b9f295d19411e254b3bcc",
+    "pictureLink": "",
+    "tenant": "tenant1",
+    "username": "user_1"
+  },
+  {
+    "accountNonExpired": true,
+    "accountNonLocked": true,
+    "authorities": null,
+    "credentialsNonExpired": true,
+    "data": "",
+    "email": "avshalom.amsalem@gmail.com",
+    "enabled": true,
+    "id": 2,
+    "password": "9a154668ce7ab1065c694db60e0ec67fae07d06ac22e708997124999f4b68c66ece97f930fee4a9b819e3c23d44d78efee030cad81adf7661e54b7975623346b",
+    "pictureLink": "",
+    "tenant": "snapglue",
+    "username": "avshi"
+  },
+  {
+    "accountNonExpired": true,
+    "accountNonLocked": true,
+    "authorities": null,
+    "credentialsNonExpired": true,
+    "data": "[{\"panelstatus\":\"normalized\",\"id\":\"daily\",\"title\":\"DailyReport\",\"custom\":{\"config\":\"configDaily\"},\"offset\":{\"top\":0,\"left\":0},\"size\":{\"width\":\"617px\",\"height\":\"273px\"},\"position\":{\"top\":\"117px\",\"left\":\"236px\"},\"ajax\":{\"url\":\"\\/rest\\/report\\/daily\"}},{\"panelstatus\":\"normalized\",\"id\":\"alerts\",\"title\":\"AlertsReport\",\"custom\":{\"config\":\"configAlerts\"},\"offset\":{\"top\":0,\"left\":0},\"size\":{\"width\":\"499px\",\"height\":\"270px\"},\"position\":{\"top\":\"114px\",\"left\":\"889px\"},\"ajax\":{\"url\":\"\\/rest\\/alerts\\/all\"}}]",
+    "email": "avshalom.amsalem@gmail.com",
+    "enabled": true,
+    "id": 3,
+    "password": "d2894ab0a6bbf2ee27f4a3650e9801616d07d9136b1fa899008b4dd56a6778e82180a130f026d0d31fd22e961c5efc262e1d07bcf23bce347ebdf35bb47b26ed",
+    "pictureLink": "",
+    "tenant": "snapglue",
+    "username": "king"
+  },
+  {
+    "accountNonExpired": true,
+    "accountNonLocked": true,
+    "authorities": null,
+    "credentialsNonExpired": true,
+    "data": "",
+    "email": "avshalom.amsalem@gmail.com",
+    "enabled": true,
+    "id": 4,
+    "password": "558adbd3fb9c9ca6e31ee16688462858ad18d6f4a296b20d4e85933263b2beb7d3bd11db81bb10eaf88454e8a5a29d24a4f8f2659bf880a4b84972839912a48d",
+    "pictureLink": "",
+    "tenant": "snapglue",
+    "username": "amsalem"
+  }
+]

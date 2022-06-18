@@ -1,0 +1,34 @@
+{
+  "name": "angular-message-center",
+  "version": "1.3.1",
+  "main": [
+    "dist/js/message-center.js",
+    "dist/css/message-center.css"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-animate": "~1.4.7"
+  },
+  "keywords": [
+    "angular",
+    "message",
+    "notification"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "homepage": "https://github.com/IanShoe/angular-message-center",
+  "_release": "1.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.3.1",
+    "commit": "24f896dd236f7526f796a13e2c1a129e220f4abc"
+  },
+  "_source": "git://github.com/IanShoe/angular-message-center.git",
+  "_target": "~1.3.1",
+  "_originalSource": "angular-message-center",
+  "_direct": true
+}

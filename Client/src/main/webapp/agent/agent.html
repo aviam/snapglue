@@ -1,0 +1,92 @@
+
+
+
+<style>
+    .navbar {
+        background: #3c8dbc;
+    }
+    .navbar .navbar-nav>li>a {
+        color: #f6fafc;
+
+    }
+    .navbar .navbar-nav>li>a:hover {
+        color: #3c8dbc;
+    }
+</style>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/agent" class="navbar-brand" rel="home" title="SnapGlue">
+                <img style="max-width:100px; margin-top: 3px;"
+                     src="brand-dark.png">
+            </a>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+
+
+
+
+            <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<img src="" class="user-image">-->
+                    <span class="hidden-xs">{{ username }}</span>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="pull-left btn" ng-click="logout($event); ">Log Out</a></li>
+                    <li><a href="#/user-management/user/{{ userID }}/edit" class="btn pull-left">Edit Profile</a></li>
+
+                </ul>
+            </li>
+        </ul>
+       <!--<div class="navbar-collapse collapse pull-left" id="navbar-main">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li>-->
+                        <!--<a href="#/dashboard">Home</a>-->
+                    <!--</li>-->
+                    <!--<li ng-class="{ active: isActive('/quickstart')}">-->
+                     	   <!--<a href="#/quickstart">Quick Start</a>-->
+                    <!--</li>-->
+                    <!-- -->
+                    <!-- -->
+                <!--</ul>-->
+            <!--</div>-->
+     <!-- -->
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+<!--                 <li class="active"><a href="#"><i class="fa fa-plus"></i> Add Gadget <span class="sr-only">(current)</span></a></li> -->
+                <li><a href="#/user-management"><i class="fa fa-users"></i> Manage Users</a></li>
+               
+               
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <iframe ng-src="agent/agent_actual.html" width="1000" height="900"> </iframe>
+            
+           
+                <footer>
+                        <div>Copyright (c) 2015 SnapGlue. All rights reserved. v<span app-version></span></div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+-->

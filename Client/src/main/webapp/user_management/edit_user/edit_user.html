@@ -1,0 +1,111 @@
+<style>
+    .navbar {
+        background: #3c8dbc;
+    }
+
+    .navbar .navbar-nav > li > a {
+        color: #f6fafc;
+    }
+
+    .navbar .navbar-nav > li > a:hover {
+        color: #3c8dbc;
+    }
+</style>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/agent" class="navbar-brand" rel="home" title="SnapGlue">
+                <img style="max-width:100px; margin-top: 3px;"
+                     src="brand-dark.png">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#/user-management/create"><i class="fa fa-user-plus"></i> Edit User <span
+                        class="sr-only">(current)</span></a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Edit User</h1>
+            <form class="form-horizontal" ng-if="user">
+                <fieldset>
+
+                    <!-- Username -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="username">Username</label>
+                        <div class="col-md-4">   
+                            <input id="username" ng-model="user.username" name="username" type="text" class="form-control input-md" autofocus>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="password">Password</label>
+                        <div class="col-md-4">   
+                            <input id="password" ng-model="user.password" name="password" type="password" class="form-control input-md" autofocus>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">Email</label>
+                        <div class="col-md-4">
+                            <input id="email" ng-model="user.email" name="user.email" type="email" class="form-control input-md">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+
+                    <!-- Role -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="role">Role</label>
+                        <div class="col-md-4">
+                            <select ng-model="user.role" id="role" name="role" class="form-control">
+                                <option value="ROLE_USER">User</option>
+                                <option value="ROLE_ADMIN">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Tenant -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="tenant">Tenant</label>
+                        <div class="col-md-4">
+                            <input id="tenant" ng-model="user.tenant" name="tenant" type="text" class="form-control input-md">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+
+                    <!-- Error -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"></label>
+                        <div class="col-md-4">
+                            <label class="text-danger">{{ errorMessage }}</label>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="update"></label>
+                        <div class="col-md-4">
+                            <button ng-click="update()" id="update" name="update" class="btn btn-primary">Update</button>
+                            <button ng-click="cancel()" id="cancel" name="cancel" class="btn btn-primary">Cancel</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

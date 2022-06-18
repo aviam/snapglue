@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>application</artifactId>
+    <name>SnapGlue - Run Application</name>
+    <packaging>pom</packaging>
+
+    <parent>
+        <artifactId>nigealm-parent</artifactId>
+        <groupId>com.nigealm</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <fork>false</fork>
+        <host>localhost</host>
+        <port>8080</port>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <ignorePackaging>true</ignorePackaging>
+                    <hostName>${host}</hostName>
+                    <fork>${fork}</fork>
+                    <port>${port}</port>
+                    <warDirectory>/${project.build.directory}</warDirectory>
+                    <webapps>
+                        <webapp>
+                            <contextPath>/agentServer</contextPath>
+                            <groupId>com.nigealm</groupId>
+                            <artifactId>agent</artifactId>
+                            <version>${project.version}</version>
+                            <type>war</type>
+                            <asWebapp>true</asWebapp>
+                        </webapp>
+                        <webapp>
+                            <contextPath>/</contextPath>
+                            <groupId>com.nigealm</groupId>
+                            <artifactId>Client</artifactId>
+                            <version>${project.version}</version>
+                            <type>war</type>
+                            <asWebapp>true</asWebapp>
+                        </webapp>
+                        <webapp>
+                            <contextPath>/server</contextPath>
+                            <groupId>com.nigealm</groupId>
+                            <artifactId>server</artifactId>
+                            <version>${project.version}</version>
+                            <type>war</type>
+                            <asWebapp>true</asWebapp>
+                        </webapp>
+                    </webapps>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

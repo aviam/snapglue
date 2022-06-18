@@ -1,0 +1,74 @@
+<!-- login modal -->
+
+<!--
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Sign in to continue to your SnapGlue</h1>
+
+            <div class="account-wall">
+                <img class="profile-img"
+                     src="http://s7728.storage.proboards.com/6037728/i/edhtrZ94moGSUlgqugLp.png?sz=120"
+                     alt="">
+
+                <form class="form-signin" action="/j_spring_security_check" method='POST'>
+                    <input type="text" class="form-control" placeholder="Email" name="j_username"
+                           required autofocus> <input type="password" name="j_password"
+                                                      class="form-control" placeholder="Password" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="login()">
+                        Sign in</button>
+                    <label class="checkbox pull-left"> <input type="checkbox" name='_spring_security_remember_me'
+                                                              value="remember-me"> Remember me
+                    </label> <a href="#main" class="pull-right need-help">Need help? </a><span
+                        class="clearfix"></span>
+                </form>
+            </div>
+            <a href="#main" class="text-center new-account">Create an account </a>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="container">
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form role="form">
+                <fieldset>
+                    <img src="brand.png">
+                    <hr class="colorgraph">
+                    <p class="Lead">Sign in to continue to your SnapGlue</p>
+                    <div class="form-group">
+                    <input type="email" ng-model="email" name="email" id="email" class="form-control input-lg"
+                           placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" ng-model="password" name="password" id="password" class="form-control input-lg"
+                               placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="pull-right"><a href="#" ng-click="login()">Need help?</a></div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>{{errorMessage}}</label>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="submit" ng-click="login()" class="btn btn-lg btn-success btn-block" value="Sign In">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <a href="" class="btn btn-lg btn-primary btn-block">Create an account</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</div>
